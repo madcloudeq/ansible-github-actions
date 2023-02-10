@@ -1,0 +1,15 @@
+---
+- name: sample playbook
+  hosts: ansible_client
+  remote_user: root
+  become: true
+  tasks:
+    - name: run httpd
+      service:
+              name: httpd
+              state: started
+
+    - name: create content
+      copy:
+           content: "hello world latest"
+           dest: "/var/www/html/index.html"
