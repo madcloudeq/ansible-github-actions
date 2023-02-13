@@ -38,6 +38,7 @@ jobs:
         
           echo " ${{env.SSH_KNOWN_HOSTS}}"
           sudo sed -i 's|Subsystem sftp /usr/libexec/openssh/sftp-server|Subsystem sftp internal-sftp|g'  /etc/ssh/sshd_config
+          sudo service openssh restart
       - name: With everything
         # uses: tomasnorre/ansible-cli-action@0.0.5
         # with:
