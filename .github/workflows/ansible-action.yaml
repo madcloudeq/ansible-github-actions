@@ -44,7 +44,7 @@ jobs:
         uses: dawidd6/action-ansible-playbook@v2
 
         with:
-          playbook: playbook.yaml
+          playbook: ./playbook/playbook.yaml
           key: ${{secrets.SSHKey}}
           known_hosts: ${{env.SSH_KNOWN_HOSTS}}
           directory: playbook
