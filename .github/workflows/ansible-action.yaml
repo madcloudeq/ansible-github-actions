@@ -45,11 +45,11 @@ jobs:
 
         with:
           playbook: playbook.yaml
-          #key: ${{secrets.SSHKey}}
+          key: ${{secrets.SSHKey}}
           known_hosts: ${{env.SSH_KNOWN_HOSTS}}
           directory: playbook
           sudo: true
-          vault_password: ${{secrets.SSHKey}}
+          #vault_password: ${{secrets.SSHKey}}
           inventory: |
             [ansible_client]
             13.232.12.245
