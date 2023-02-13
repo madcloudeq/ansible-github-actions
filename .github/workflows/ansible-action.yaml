@@ -38,13 +38,13 @@ jobs:
         
           echo " ${{env.SSH_KNOWN_HOSTS}}"
           sudo sed -i 's|Subsystem sftp /usr/libexec/openssh/sftp-server|Subsystem sftp internal-sftp|g'  /etc/ssh/sshd_config
-          sudo service openssh restart
+          
       - name: With everything
         # uses: tomasnorre/ansible-cli-action@0.0.5
         # with:
         # command: "ansible-playbook ./playbook/playbook1.yaml"
-        uses: dawidd6/action-ansible-playbook@v2
-
+        #uses: dawidd6/action-ansible-playbook@v2
+        uses: ansible/ansible-publish-action@v1.0.0
         with:
           playbook: playbook.yaml
           key: ${{secrets.SSHKey}}
