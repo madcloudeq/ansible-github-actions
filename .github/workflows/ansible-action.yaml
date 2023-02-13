@@ -17,8 +17,6 @@ jobs:
           echo ${{secrets.SSHKey}}
           echo madhav
           
-
-    steps:
       - name: Checkout code
         uses: actions/checkout@v3
       # - name: Setup remote
