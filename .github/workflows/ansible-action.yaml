@@ -35,18 +35,18 @@ jobs:
           echo 'EOF' >> $GITHUB_ENV
         
           echo " ${{env.SSH_KNOWN_HOSTS}}"
-      - name: With everything
-        uses: tomasnorre/ansible-cli-action@0.0.5
-        with:
-        command: "ansible-playbook playbook/playbook1.yaml -i hosts"
-        # uses: dawidd6/action-ansible-playbook@v2
+      # - name: With everything
+      #   uses: tomasnorre/ansible-cli-action@0.0.5
+      #   with:
+      #   command: "ansible-playbook playbook/playbook1.yaml"
+        uses: dawidd6/action-ansible-playbook@v2
 
-        # with:
-        #   playbook: playbook.yaml
-        #   key: ${{secrets.SSHKey}}
-        #   known_hosts: ${{env.SSH_KNOWN_HOSTS}}
-        #   directory: playbook
-        #   #vault_password: playbook
-        #   inventory: |
-        #     [ansible_client]
-        #     13.232.12.245
+        with:
+          playbook: playbook.yaml
+          key: ${{secrets.SSHKey}}
+          known_hosts: ${{env.SSH_KNOWN_HOSTS}}
+          directory: playbook
+          #vault_password: playbook
+          inventory: |
+            [ansible_client]
+            13.232.12.245
