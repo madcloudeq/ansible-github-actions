@@ -15,9 +15,9 @@ jobs:
     steps:
       - name: Checkout code
     
-        run: |
-          echo ${{secrets.SSHKey}}
-          echo madhav
+        #run: |
+          #echo ${{secrets.SSHKey}}
+          #echo madhav
           
       - name: Checkout code
         uses: actions/checkout@v3
