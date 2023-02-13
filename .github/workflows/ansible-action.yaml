@@ -16,6 +16,7 @@ jobs:
         run: |
           echo ${{secrets.SSHKey}}
           echo madhav
+          
 
     steps:
       - name: Checkout code
@@ -34,14 +35,16 @@ jobs:
           echo 'SSH_KNOWN_HOSTS<<EOF' >> $GITHUB_ENV
           echo $(ssh-keyscan 13.232.12.245) >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
-      - name: With everything
-        uses: ./
-        with:
-          playbook: playbook.yaml
-          key: ${{secrets.SSHKey}}
-          known_hosts: ${{env.SSH_KNOWN_HOSTS}}
-          directory: playbook
-          vault_password: playbook
-          inventory: |
-            [ansible_client]
-            13.232.12.245
+        run: |
+          echo " ${{env.SSH_KNOWN_HOSTS}}"
+      # - name: With everything
+      #   uses: ./
+      #   with:
+      #     playbook: playbook.yaml
+      #     key: ${{secrets.SSHKey}}
+      #     known_hosts: ${{env.SSH_KNOWN_HOSTS}}
+      #     directory: playbook
+      #     vault_password: playbook
+      #     inventory: |
+      #       [ansible_client]
+      #       13.232.12.245
