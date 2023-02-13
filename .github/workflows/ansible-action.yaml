@@ -33,7 +33,7 @@ jobs:
           echo 'SSH_KNOWN_HOSTS<<EOF' >> $GITHUB_ENV
           echo $(ssh-keyscan 13.232.12.245) >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
-        run: |
+        
           echo " ${{env.SSH_KNOWN_HOSTS}}"
       # - name: With everything
       #   uses: ./
