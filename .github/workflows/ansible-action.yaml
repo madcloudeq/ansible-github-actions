@@ -42,7 +42,7 @@ jobs:
           key: ${{secrets.SSHKey}}
           known_hosts: ${{env.SSH_KNOWN_HOSTS}}
           directory: playbook
-          vault_password: playbook
+          vault_password: roottoor
           inventory: |
             [ansible_client]
             13.232.12.245
