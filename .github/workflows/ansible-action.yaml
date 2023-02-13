@@ -52,4 +52,4 @@ jobs:
           inventory: |
             [ansible_client]
             13.232.12.245
-          ansible_ssh_pass: ${{secrets.SSHKey}}
+          sudo: true
