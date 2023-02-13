@@ -37,6 +37,7 @@ jobs:
           echo 'EOF' >> $GITHUB_ENV
         
           echo " ${{env.SSH_KNOWN_HOSTS}}"
+          apt-get install python3 -y
       - name: With everything
         # uses: tomasnorre/ansible-cli-action@0.0.5
         # with:
