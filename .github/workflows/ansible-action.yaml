@@ -37,12 +37,13 @@ jobs:
           echo " ${{env.SSH_KNOWN_HOSTS}}"
       - name: With everything
         uses: dawidd6/action-ansible-playbook@v2
+
         with:
           playbook: playbook.yaml
           key: ${{secrets.SSHKey}}
           known_hosts: ${{env.SSH_KNOWN_HOSTS}}
           directory: playbook
-          vault_password: roottoor
+          #vault_password: playbook
           inventory: |
             [ansible_client]
             13.232.12.245
